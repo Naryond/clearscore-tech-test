@@ -1,18 +1,16 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Idea from "./Idea";
 
 function App() {
-  // const [state, setState] = useState();
-
-  let list = [{ elm: 0 }, { elm: 1 }];
+  const [list, setList] = useState([{element: 0}]);
 
   const addOne = () => {
-    return list.push({ elm: list.length + 1 });
+    setList(() => {list.push()});
   };
 
   const removeOne = () => {
-    return list.pop();
+    setList(() => {list.pop()})
   };
 
   return (
@@ -28,7 +26,7 @@ function App() {
       </button>
       <div className="externalBox">
         {list.map((x) => (
-          <ul key={x.elm}>{<Idea />}</ul>
+          <ul key={x.element}>{<Idea />}</ul>
         ))}
       </div>
     </div>
