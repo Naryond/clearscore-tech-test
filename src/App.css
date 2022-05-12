@@ -15,6 +15,7 @@ h1 {
 .externalBox {
     display: flex;
     align-items: flex-start;
+    flex-flow: wrap;
 }
 
 .buttonAdd {

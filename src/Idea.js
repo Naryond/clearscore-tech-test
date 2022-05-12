@@ -1,7 +1,7 @@
 import blockNote from "./blockNotes.jpg";
 import "./Idea.css";
 
-const Idea = (props) => {
+const Idea = () => {
   return (
     <div className="singleBox">
       <img src={blockNote} alt="notes" />

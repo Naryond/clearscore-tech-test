@@ -3,14 +3,14 @@ import "./App.css";
 import Idea from "./Idea";
 
 function App() {
-  const [list, setList] = useState([{element: 0}]);
-
+  const [list, setList] = useState([{a: 1}]);
+  
   const addOne = () => {
-    setList(() => {list.push()});
+    setList(() => [...list, list.push()]);
   };
 
   const removeOne = () => {
-    setList(() => {list.pop()})
+    setList(() => [list.pop()])
   };
 
   return (
@@ -25,8 +25,8 @@ function App() {
         Remove
       </button>
       <div className="externalBox">
-        {list.map((x) => (
-          <ul key={x.element}>{<Idea />}</ul>
+        {list.map((a, i) => (
+          <ul key={i}>{<Idea />}</ul>
         ))}
       </div>
     </div>

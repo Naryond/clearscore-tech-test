@@ -16,4 +16,6 @@
   position: absolute;
   right: 26em;
   bottom: 33em;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
