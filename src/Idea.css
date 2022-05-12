@@ -1,0 +1,19 @@
+.singleBox {
+  position: relative;
+  margin: 1em;
+  border-color: #19020e;
+  min-height: 100px;
+  width: auto;
+}
+
+.inputTitle {
+  position: absolute;
+  right: 24em;
+  bottom: 35em;
+}
+
+.inputIdea {
+  position: absolute;
+  right: 26em;
+  bottom: 33em;
+}

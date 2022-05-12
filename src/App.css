@@ -17,10 +17,14 @@ h1 {
     align-items: flex-start;
 }
 
+.buttonAdd {
+    border-radius: 20px;
+    color:#ff42a8;
+    background-color: #19020e;
+}
 
-.singleBox {
-    margin: 1em;
-    border-color: #19020e;
-    min-height: 100px;
-    width: auto;
+.buttonRemove {
+    border-radius: 20px;
+    color:#ff42a8;
+    background-color: #19020e;
 }
