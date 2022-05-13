@@ -8,13 +8,13 @@
 
 .inputTitle {
   position: absolute;
-  right: 24em;
+  right: 32em;
   bottom: 35em;
 }
 
 .inputIdea {
   position: absolute;
-  right: 26em;
+  right: 32em;
   bottom: 33em;
   overflow: hidden;
   text-overflow: ellipsis;

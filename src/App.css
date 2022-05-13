@@ -17,15 +17,3 @@ h1 {
     align-items: flex-start;
     flex-flow: wrap;
 }
-
-.buttonAdd {
-    border-radius: 20px;
-    color:#ff42a8;
-    background-color: #19020e;
-}
-
-.buttonRemove {
-    border-radius: 20px;
-    color:#ff42a8;
-    background-color: #19020e;
-}

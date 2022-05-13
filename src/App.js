@@ -1,16 +1,17 @@
 import { useState } from "react";
 import "./App.css";
+import "./Button.css";
 import Idea from "./Idea";
 
 function App() {
-  const [list, setList] = useState([{a: 1}]);
-  
+  const [list, setList] = useState([{ a: 1 }]);
+
   const addOne = () => {
     setList(() => [...list, list.push()]);
   };
 
   const removeOne = () => {
-    setList(() => [list.pop()])
+    setList(() => [list.pop()]);
   };
 
   return (
@@ -18,15 +19,12 @@ function App() {
       <header className="header">
         <h1 className="h1">Our Ideas</h1>
       </header>
-      <button className="buttonAdd" type="submit" onClick={addOne}>
-        Add
-      </button>
-      <button className="buttonRemove" type="submit" onClick={removeOne}>
-        Remove
+      <button className="button" type="submit" onClick={addOne}>
+        Add New Tile
       </button>
       <div className="externalBox">
-        {list.map((a, i) => (
-          <ul key={i}>{<Idea />}</ul>
+        {list.map((i) => (
+          <ul key={i}>{<Idea cancel={removeOne} />}</ul>
         ))}
       </div>
     </div>
