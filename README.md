@@ -19,5 +19,5 @@ Add an unobtrusive notification when an update is made to a tile.
 
 ---
 
-So far in the version 1.11 I managed to create the tiles and add some more when the Add button is clicked. The remove one erase everything, I might want to get somethiing that removes one tile per time and maybe not just the last one but the one you actually want to erase.
+So far in the version 1.12 I managed to create the tiles and add some more when the Add button is clicked. The remove one is been put on every single tile, but clicking it deletes wrongly. I noticeed that using it more tha once the initial list is growing by 1 every time.
 The page is not fully responsive yet, the time thing still need to be added as well as the sorting thing.
