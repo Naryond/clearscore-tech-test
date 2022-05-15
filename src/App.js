@@ -30,9 +30,8 @@ function App() {
   };
 
   const removeOne = (x) => {
-    setList(list.filter(listElement => listElement.id !== x.id))
+    setList(list.filter((listElement) => listElement.id !== x.id));
   };
-  console.log(list)
 
   return (
     <div className="boxes">

@@ -13,7 +13,7 @@ const Idea = ({ cancel, card }) => {
     setContent({ content: e.target.value });
   };
 
-  const erase = () => cancel(card)
+  const erase = () => cancel(card);
 
   return (
     <div className="singleBox">
