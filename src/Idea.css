@@ -6,16 +6,21 @@
   width: auto;
 }
 
+.img {
+  width:200px;
+  height: auto;
+}
+
 .inputTitle {
   position: absolute;
-  right: 32em;
-  bottom: 35em;
+  /* right: 32em;
+  bottom: 35em; */
 }
 
 .inputIdea {
   position: absolute;
-  right: 32em;
-  bottom: 33em;
+  /* right: 32em;
+  bottom: 33em; */
   overflow: hidden;
   text-overflow: ellipsis;
 }

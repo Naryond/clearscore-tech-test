@@ -19,12 +19,12 @@ const card = {
   id: 1
 }
 
-const card2 = {
-  title: 'hello',
-  description: 'Today is a nice day for a walk',
-  date: new Date(),
-  id:2
-}
+// const card2 = {
+//   title: 'hello',
+//   description: 'Today is a nice day for a walk',
+//   date: new Date(),
+//   id:2
+// }
 
 function App() {
   const [list, setList] = useState([card]);
