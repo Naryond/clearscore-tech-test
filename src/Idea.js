@@ -1,23 +1,22 @@
 import { useState } from "react";
-import blockNote from "./blockNotes.jpg";
 import "./Idea.css";
 import "./Button.css";
 
 const Idea = ({ cancel, card }) => {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [title, setTitle] = useState("My Idea");
+  const [content, setContent] = useState("I think...");
+
   const getTitle = (e) => {
-    setTitle({ title: e.target.value });
+    setTitle(e.target.value);
   };
   const getContent = (e) => {
-    setContent({ content: e.target.value });
+    setContent(e.target.value);
   };
 
   const erase = () => cancel(card);
 
   return (
     <div className="singleBox">
-      <img className="img" src={blockNote} alt="notes" />
       <input
         className="inputTitle"
         type="text"
@@ -30,6 +29,12 @@ const Idea = ({ cancel, card }) => {
         defaultValue={content}
         onChange={getContent}
       />
+      <div className="output">
+        <b>{title}</b>
+        <br />
+        <br />
+        {content}
+      </div>
       <button className="button regolation" onClick={erase}>
         Remove
       </button>

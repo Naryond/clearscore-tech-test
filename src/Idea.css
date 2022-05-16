@@ -1,26 +1,26 @@
 .singleBox {
-  position: relative;
   margin: 1em;
   border-color: #19020e;
-  min-height: 100px;
-  width: auto;
-}
-
-.img {
-  width:200px;
-  height: auto;
+  border: 10px;
+  min-height: 300px;
+  width: 300px;
 }
 
 .inputTitle {
-  position: absolute;
-  /* right: 32em;
-  bottom: 35em; */
+  right: 10em;
+  bottom: 10em;
 }
 
 .inputIdea {
-  position: absolute;
-  /* right: 32em;
-  bottom: 33em; */
+  right: 10em;
+  bottom: 8em;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.output {
+  width: 200px;
+  height: 200px;
+  border-color: #19020e;
+  border-style: solid;
 }

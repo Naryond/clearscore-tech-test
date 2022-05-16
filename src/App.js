@@ -22,13 +22,14 @@ function App() {
   const addOne = () => {
     const newCard = {
       title: "",
-      description: "",
+      content: "",
       date: new Date(),
       id: uuidv4(),
     };
     setList([...list, newCard]);
   };
 
+  // Filter is a good non-destructive method to erase the element based on its Id
   const removeOne = (x) => {
     setList(list.filter((listElement) => listElement.id !== x.id));
   };

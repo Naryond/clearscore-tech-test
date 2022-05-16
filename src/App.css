@@ -1,19 +1,19 @@
 body {
-    background-color: #ff42a8;
+  background-color: #ff42a8;
 }
 
 .header {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
-    color: #19020e;
-    font-family: baskerville;
+  color: #19020e;
+  font-family: baskerville;
 }
 
 .externalBox {
-    display: flex;
-    align-items: flex-start;
-    flex-flow: wrap;
+  display: flex;
+  align-items: flex-start;
+  flex-flow: wrap;
 }
