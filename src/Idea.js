@@ -16,20 +16,18 @@ const Idea = ({ cancel, card }) => {
   const erase = () => cancel(card);
 
   return (
-    <div className="singleBox">
+    <div>
       <input
-        className="inputTitle"
         type="text"
         defaultValue={title}
         onChange={getTitle}
       />
       <input
-        className="inputIdea"
         type="text"
         defaultValue={content}
         onChange={getContent}
       />
-      <div className="output">
+      <div className="singleBox">
         <b>{title}</b>
         <br />
         <br />

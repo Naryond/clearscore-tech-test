@@ -42,7 +42,7 @@ function App() {
       <button className="button" type="submit" onClick={addOne}>
         Add New Idea
       </button>
-      <div className="externalBox">
+      <div className="board">
         {list.map((item) => {
           return (
             <ul key={item.id}>

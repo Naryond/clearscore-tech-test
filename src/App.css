@@ -12,7 +12,7 @@ h1 {
   font-family: baskerville;
 }
 
-.externalBox {
+.board {
   display: flex;
   align-items: flex-start;
   flex-flow: wrap;

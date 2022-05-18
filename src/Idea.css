@@ -1,26 +1,12 @@
 .singleBox {
-  margin: 1em;
-  border-color: #19020e;
-  border: 10px;
-  min-height: 300px;
   width: 300px;
-}
-
-.inputTitle {
-  right: 10em;
-  bottom: 10em;
-}
-
-.inputIdea {
-  right: 10em;
-  bottom: 8em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.output {
-  width: 200px;
   height: 200px;
   border-color: #19020e;
   border-style: solid;
+}
+
+@media only screen and (min-width: 768px) {
+  .singleBox {
+    width: 400px;
+  }
 }
