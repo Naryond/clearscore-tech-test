@@ -28,6 +28,10 @@ function App() {
     setList([...list, newCard]);
   };
 
+  const sort = (x) => {
+    list.sort(x.date)
+  }
+
   // Filter is a good non-destructive method to erase the element based on its Id
   const removeOne = (x) => {
     setList(list.filter((listElement) => listElement.id !== x.id));
@@ -38,13 +42,14 @@ function App() {
       <header className="header">
         <h1 className="h1">Our Ideas</h1>
       </header>
-      <button className="button" type="submit" onClick={addOne}>
+      <button className="button" onClick={addOne}>
         Add New Idea
       </button>
+      <button className="button" onCLick={sort}>Sort</button>
       <div className="board">
         {list.map((item) => {
           return (
-            <ul className='ul' key={item.id}>
+            <ul className="ul" key={item.id}>
               <Idea card={item} cancel={removeOne} />
             </ul>
           );

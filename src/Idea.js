@@ -27,7 +27,10 @@ const Idea = ({ cancel, card }) => {
         <br />
         <br />
         {content}
-        <div className='time'>{time.toLocaleTimeString()}</div>
+        <div className="time">
+          {time.toLocaleDateString()}<br/>
+          {time.toLocaleTimeString()}
+        </div>
       </div>
       <button className="button bottom" onClick={erase}>
         Remove
