@@ -1,6 +1,5 @@
 import { useState } from "react";
-import "./App.css";
-import "./Button.css";
+import "./Style.css";
 import Idea from "./Idea";
 import { v4 as uuidv4 } from "uuid";
 
@@ -35,7 +34,7 @@ function App() {
   };
 
   return (
-    <div className="boxes">
+    <div>
       <header className="header">
         <h1 className="h1">Our Ideas</h1>
       </header>
@@ -45,7 +44,7 @@ function App() {
       <div className="board">
         {list.map((item) => {
           return (
-            <ul key={item.id}>
+            <ul className='ul' key={item.id}>
               <Idea card={item} cancel={removeOne} />
             </ul>
           );
