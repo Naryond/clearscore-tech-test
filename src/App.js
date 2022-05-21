@@ -29,8 +29,8 @@ function App() {
   };
 
   const sort = (x) => {
-    list.sort(x.date)
-  }
+    list.sort(x.date);
+  };
 
   // Filter is a good non-destructive method to erase the element based on its Id
   const removeOne = (x) => {
@@ -45,7 +45,9 @@ function App() {
       <button className="button" onClick={addOne}>
         Add New Idea
       </button>
-      <button className="button" onClick={sort}>Sort</button>
+      <button className="button" onClick={sort}>
+        Sort
+      </button>
       <div className="board">
         {list.map((item) => {
           return (
