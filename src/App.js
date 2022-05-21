@@ -45,7 +45,7 @@ function App() {
       <button className="button" onClick={addOne}>
         Add New Idea
       </button>
-      <button className="button" onCLick={sort}>Sort</button>
+      <button className="button" onClick={sort}>Sort</button>
       <div className="board">
         {list.map((item) => {
           return (
