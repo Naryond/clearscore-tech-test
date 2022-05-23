@@ -25,7 +25,10 @@ const Idea = ({ cancel, card }) => {
 
   localStorage.setItem(data.id, JSON.stringify({ data }));
 
-  const erase = () => cancel(card);
+  const erase = () => {
+    cancel(card);
+    localStorage.removeItem(card.id)
+  };
 
   return (
     <div>
