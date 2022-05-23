@@ -21,13 +21,13 @@ const Idea = ({ cancel, card }) => {
     setEdit(!edit);
   };
 
-  const data = { title: title, content: content, date: time, id: card.id };
+  // const data = { title: title, content: content, date: time, id: card.id };
 
-  localStorage.setItem(data.id, JSON.stringify({ data }));
+  // localStorage.setItem(data.id, JSON.stringify({ data }));
 
   const erase = () => {
     cancel(card);
-    localStorage.removeItem(card.id)
+    localStorage.removeItem(card.id);
   };
 
   return (

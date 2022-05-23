@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Style.css";
 import Idea from "./Idea";
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [list, setList] = useState([]);
+
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(list));
+  }, [list]);
 
   const addOne = () => {
     const newCard = {
