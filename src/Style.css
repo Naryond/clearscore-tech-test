@@ -1,5 +1,5 @@
 body {
-  background-color:white;
+  background-color:#ffecf6;
 }
 
 .header {
@@ -14,17 +14,15 @@ h1 {
 
 .board {
   display: flex;
-  align-items: flex-start;
   flex-flow: wrap;
 }
 
 .ul {
-  width: 100%;
   padding: 0 2em 1em 1em;
-  margin: 0 auto;
 }
 
 .internalBox {
+  width:300px;
   max-width: 20em;
   min-height: 200px;
   border-color: #19020e;
@@ -48,8 +46,9 @@ h1 {
 }
 
 @media only screen and (min-width: 768px) {
+
   .board {
-    flex-flow: nowrap;
+    align-items: flex-start;
   }
 
   .internalBox {
@@ -57,8 +56,9 @@ h1 {
   }
 }
 
-/* @media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1440px) {
+
   .internalBox {
-    font-size: x-large;
+    font-size:x-large
   }
-} */
+}

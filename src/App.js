@@ -3,11 +3,6 @@ import "./Style.css";
 import Idea from "./Idea";
 import { v4 as uuidv4 } from "uuid";
 
-// whenever updating state
-// 1 - copy current state
-// 2 - manipulate the copy of state (not the actual state)
-// 3 - reset state with updated copy
-
 const card = {
   title: "",
   content: "",
@@ -32,7 +27,6 @@ function App() {
     list.sort(x.date);
   };
 
-  // Filter is a good non-destructive method to erase the element based on its Id
   const removeOne = (x) => {
     setList(list.filter((listElement) => listElement.id !== x.id));
   };
