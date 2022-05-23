@@ -1,17 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./Style.css";
 import Idea from "./Idea";
 import { v4 as uuidv4 } from "uuid";
 
-const card = {
-  title: "",
-  content: "",
-  date: new Date(),
-  id: uuidv4(),
-};
-
 function App() {
-  const [list, setList] = useState([card]);
+  const [list, setList] = useState([]);
 
   const addOne = () => {
     const newCard = {
@@ -26,11 +19,6 @@ function App() {
   const sort = (x) => {
     list.sort(x.date);
   };
-
-  useEffect(() => {
-    localStorage.setItem('list', JSON.stringify(list))
-  },[list])
-
 
   const removeOne = (x) => {
     setList(list.filter((listElement) => listElement.id !== x.id));
