@@ -5,6 +5,8 @@ import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [list, setList] = useState([]);
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
 
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
@@ -12,8 +14,8 @@ function App() {
 
   const addOne = () => {
     const newCard = {
-      title: "",
-      content: "",
+      title: title,
+      content: content,
       date: new Date(),
       id: uuidv4(),
     };
@@ -26,6 +28,13 @@ function App() {
 
   const removeOne = (x) => {
     setList(list.filter((listElement) => listElement.id !== x.id));
+  };
+
+  const titleUp = (data) => {
+    setTitle(data);
+  };
+  const contentUp = (data) => {
+    setContent(data);
   };
 
   return (
@@ -43,7 +52,12 @@ function App() {
         {list.map((item) => {
           return (
             <ul className="ul" key={item.id}>
-              <Idea card={item} cancel={removeOne} />
+              <Idea
+                card={item}
+                titleUp={titleUp}
+                contentUp={contentUp}
+                cancel={removeOne}
+              />
             </ul>
           );
         })}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Style.css";
 
-const Idea = ({ cancel, card }) => {
+const Idea = ({ cancel, card, titleUp, contentUp }) => {
   const [title, setTitle] = useState("My Idea");
   const [content, setContent] = useState("I think...");
   const [time, setTime] = useState(card.date);
@@ -10,11 +10,13 @@ const Idea = ({ cancel, card }) => {
   const getTitle = (e) => {
     setTitle(e.target.value);
     setTime(new Date());
+    titleUp(title);
   };
 
   const getContent = (e) => {
     setContent(e.target.value);
     setTime(new Date());
+    contentUp(content);
   };
 
   const editMode = () => {
