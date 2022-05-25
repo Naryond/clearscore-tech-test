@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Style.css";
 
-const Idea = ({ cancel, card, titleUp, contentUp }) => {
+const Idea = ({ cancel, card, editCard }) => {
   const [title, setTitle] = useState("My Idea");
   const [content, setContent] = useState("I think...");
   const [time, setTime] = useState(card.date);
@@ -10,17 +10,28 @@ const Idea = ({ cancel, card, titleUp, contentUp }) => {
   const getTitle = (e) => {
     setTitle(e.target.value);
     setTime(new Date());
-    titleUp(title);
+    // titleUp(title);
   };
 
   const getContent = (e) => {
     setContent(e.target.value);
     setTime(new Date());
-    contentUp(content);
+    // contentUp(content);
   };
 
   const editMode = () => {
     setEdit(!edit);
+
+    if (edit) {
+      const updateCard = {
+        id: card.id,
+        date: new Date(),
+        title,
+        content
+      }
+
+      editCard(updateCard);
+    }
   };
 
   // const data = { title: title, content: content, date: time, id: card.id };
@@ -29,7 +40,6 @@ const Idea = ({ cancel, card, titleUp, contentUp }) => {
 
   const erase = () => {
     cancel(card);
-    localStorage.removeItem(card.id);
   };
 
   return (
@@ -37,8 +47,8 @@ const Idea = ({ cancel, card, titleUp, contentUp }) => {
       <div className="internalBox">
         {edit ? (
           <div>
-            <input type="text" defaultValue={title} onChange={getTitle} />
-            <input type="text" defaultValue={content} onChange={getContent} />
+            <input type="text" value={title} onChange={getTitle} />
+            <input type="text" value={content} onChange={getContent} />
           </div>
         ) : (
           <div>
