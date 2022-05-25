@@ -2,19 +2,19 @@ import { useState } from "react";
 import "./Style.css";
 
 const Idea = ({ cancel, card, editCard }) => {
-  const [title, setTitle] = useState("My Idea");
-  const [content, setContent] = useState("I think...");
+  const [title, setTitle] = useState(card.title);
+  const [content, setContent] = useState(card.content);
   const [time, setTime] = useState(card.date);
   const [edit, setEdit] = useState(false);
 
   const getTitle = (e) => {
     setTitle(e.target.value);
-    setTime(new Date());
+    setTime(new Date().toLocaleString());
   };
 
   const getContent = (e) => {
     setContent(e.target.value);
-    setTime(new Date());
+    setTime(new Date().toLocaleString());
   };
 
   const editMode = () => {
@@ -23,9 +23,9 @@ const Idea = ({ cancel, card, editCard }) => {
     if (edit) {
       const updateCard = {
         id: card.id,
-        date: new Date(),
-        title,
-        content
+        date: new Date().toLocaleString(),
+        title: title,
+        content: content,
       }
 
       editCard(updateCard);
@@ -46,14 +46,13 @@ const Idea = ({ cancel, card, editCard }) => {
           </div>
         ) : (
           <div>
-            <b>{title}</b>
+            <b>{card.title}</b>
             <br />
             <br />
-            {content}
+            {card.content}
             <div className="time">
-              {time.toLocaleDateString()}
               <br />
-              {time.toLocaleTimeString()}
+              {time}
             </div>
           </div>
         )}

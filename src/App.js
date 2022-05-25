@@ -3,11 +3,13 @@ import "./Style.css";
 import Idea from "./Idea";
 import { v4 as uuidv4 } from "uuid";
 
+let entry = JSON.parse(localStorage.getItem('list'));
+
 function App() {
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(entry);
 
   useEffect(() => {
-    const entry = localStorage.getItem("list");
+    let entry = localStorage.getItem("list");
     setList(JSON.parse(entry));
   }, []);
 
@@ -19,7 +21,7 @@ function App() {
     const newCard = {
       title: "title",
       content: "content",
-      date: new Date(),
+      date: new Date().toLocaleString(),
       id: uuidv4(),
     };
     setList([...list, newCard]);
@@ -40,8 +42,8 @@ function App() {
 
   const sort = () => {
     const sorted = [...list].sort(function (a, b) {
-      if (a.date.getTime() > b.date.getTime()) return 1;
-      if (a.date.getTime() < b.date.getTime()) return -1;
+      if (a.date > b.date) return 1;
+      if (a.date < b.date) return -1;
       return 0;
     });
 
@@ -55,7 +57,7 @@ function App() {
   return (
     <div>
       <header className="header">
-        <h1 className="h1">Our Ideas</h1>
+        <h1 className="h1">My Idea Board</h1>
       </header>
       <button className="button" onClick={addOne}>
         Add New Idea
