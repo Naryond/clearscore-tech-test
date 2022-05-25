@@ -22,10 +22,6 @@ function App() {
     setList([...list, newCard]);
   };
 
-  const sort = (x) => {
-    list.sort(x.date);
-  };
-
   const removeOne = (x) => {
     setList(list.filter((listElement) => listElement.id !== x.id));
   };
@@ -45,7 +41,7 @@ function App() {
       <button className="button" onClick={addOne}>
         Add New Idea
       </button>
-      <button className="button" onClick={sort}>
+      <button className="button">
         Sort
       </button>
       <div className="board">
