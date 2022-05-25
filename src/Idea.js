@@ -10,13 +10,11 @@ const Idea = ({ cancel, card, editCard }) => {
   const getTitle = (e) => {
     setTitle(e.target.value);
     setTime(new Date());
-    // titleUp(title);
   };
 
   const getContent = (e) => {
     setContent(e.target.value);
     setTime(new Date());
-    // contentUp(content);
   };
 
   const editMode = () => {
@@ -33,10 +31,6 @@ const Idea = ({ cancel, card, editCard }) => {
       editCard(updateCard);
     }
   };
-
-  // const data = { title: title, content: content, date: time, id: card.id };
-
-  // localStorage.setItem(data.id, JSON.stringify({ data }));
 
   const erase = () => {
     cancel(card);

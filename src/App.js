@@ -5,10 +5,6 @@ import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [list, setList] = useState([]);
-  // const [title, setTitle] = useState("");
-  // const [content, setContent] = useState("");
-
-  console.log({ list });
 
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
@@ -16,8 +12,8 @@ function App() {
 
   const addOne = () => {
     const newCard = {
-      title: 'title',
-      content: 'content',
+      title: "title",
+      content: "content",
       date: new Date(),
       id: uuidv4(),
     };
@@ -25,44 +21,31 @@ function App() {
   };
 
   const editCard = (updatedCard) => {
-    // console.log({ updatedCard }) 
-    // const filteredOutOldCard = list.filter(item => item.id !== updatedCard.id);
-
     const updatedCardInPlace = list.reduce((accumulator, current) => {
       // if the card is not relevent then just keep as is
       if (updatedCard.id !== current.id) {
         return [...accumulator, current];
       }
-
       // if the card is the same one, then just edit
-      return [...accumulator,updatedCard]
-    }, [])
+      return [...accumulator, updatedCard];
+    }, []);
 
     setList(updatedCardInPlace);
-  }
+  };
 
-  // date.getTime
   const sort = () => {
-    const sorted = [...list].sort(function (a,b) {
+    const sorted = [...list].sort(function (a, b) {
       if (a.date.getTime() > b.date.getTime()) return 1;
       if (a.date.getTime() < b.date.getTime()) return -1;
       return 0;
     });
 
-    setList(sorted)
+    setList(sorted);
   };
 
   const removeOne = (x) => {
     setList(list.filter((listElement) => listElement.id !== x.id));
   };
-
-  // const titleUp = (data) => {
-  //   setTitle(data);
-  // };
-  // const contentUp = (data) => {
-  //   setContent(data);
-  // };
-
 
   return (
     <div>
@@ -72,20 +55,14 @@ function App() {
       <button className="button" onClick={addOne}>
         Add New Idea
       </button>
-      <button className="button">
+      <button className="button" onClick={sort}>
         Sort
       </button>
       <div className="board">
         {list.map((item) => {
           return (
             <ul className="ul" key={item.id}>
-              <Idea
-                card={item}
-                // titleUp={titleUp}
-                // contentUp={contentUp}
-                cancel={removeOne}
-                editCard={editCard}
-              />
+              <Idea card={item} cancel={removeOne} editCard={editCard} />
             </ul>
           );
         })}
