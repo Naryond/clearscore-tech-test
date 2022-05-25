@@ -22,6 +22,14 @@ function App() {
     setList([...list, newCard]);
   };
 
+  // const sort = () => {
+  //   list.sort(function (a,b) {
+  //     if (a.date.stringify() > b.date.stringify()) return 1;
+  //     if (a.date < b.date) return -1;
+  //     return 0;
+  //   });
+  // };
+
   const removeOne = (x) => {
     setList(list.filter((listElement) => listElement.id !== x.id));
   };
@@ -45,7 +53,7 @@ function App() {
         Sort
       </button>
       <div className="board">
-        {list.map((item) => {
+        {list.sort((a,b) => a.date > b.date ? 1 : -1).map((item) => {
           return (
             <ul className="ul" key={item.id}>
               <Idea
