@@ -42,7 +42,7 @@ const Idea = ({ cancel, card, editCard }) => {
         {edit ? (
           <div>
             <input type="text" value={title} onChange={getTitle} />
-            <input type="text" value={content} onChange={getContent} />
+            <input type="text" value={content} onChange={getContent} maxlength="140"/>
           </div>
         ) : (
           <div>

@@ -40,7 +40,17 @@ function App() {
     setList(updatedCardInPlace);
   };
 
-  const sort = () => {
+  const sortName = () => {
+    const sorted = [...list].sort(function (a, b) {
+      if (a.title > b.title) return 1;
+      if (a.title < b.title) return -1;
+      return 0;
+    });
+
+    setList(sorted);
+  };
+
+  const sortDate = () => {
     const sorted = [...list].sort(function (a, b) {
       if (a.date > b.date) return 1;
       if (a.date < b.date) return -1;
@@ -62,8 +72,11 @@ function App() {
       <button className="button" onClick={addOne}>
         Add New Idea
       </button>
-      <button className="button" onClick={sort}>
-        Sort
+      <button className="button" onClick={sortName}>
+        Sort by Name
+      </button>
+      <button className="button" onClick={sortDate}>
+        Sort by Date
       </button>
       <div className="board">
         {list.map((item) => {
