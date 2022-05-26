@@ -3,7 +3,7 @@ import "./Style.css";
 import Idea from "./Idea";
 import { v4 as uuidv4 } from "uuid";
 
-let entry = JSON.parse(localStorage.getItem('list'));
+let entry = JSON.parse(localStorage.getItem("list")) || [];
 
 function App() {
   const [list, setList] = useState(entry);
