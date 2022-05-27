@@ -35,6 +35,11 @@ h1 {
   color: #ff42a8;
 }
 
+.error {
+  color: red;
+  font-size: small;
+}
+
 .button {
   margin: 1em;
   border-radius: 20px;

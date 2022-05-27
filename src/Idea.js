@@ -6,6 +6,7 @@ const Idea = ({ cancel, card, editCard }) => {
   const [content, setContent] = useState(card.content);
   const [time, setTime] = useState(card.date);
   const [edit, setEdit] = useState(false);
+  const [error, setError] = useState("");
 
   const getTitle = (e) => {
     setTitle(e.target.value);
@@ -15,6 +16,17 @@ const Idea = ({ cancel, card, editCard }) => {
   const getContent = (e) => {
     setContent(e.target.value);
     setTime(new Date().toLocaleString());
+    setError(e.target.value.length);
+    let howLong = e.target.value.length;
+    if (howLong === 140) {
+      setError("Max length reached");
+    }
+    if (howLong >= 130 && howLong < 140) {
+      setError("Max length almost reached");
+    }
+    if (howLong < 130) {
+      setError("");
+    }
   };
 
   const editMode = () => {
@@ -26,7 +38,7 @@ const Idea = ({ cancel, card, editCard }) => {
         date: new Date().toLocaleString(),
         title: title,
         content: content,
-      }
+      };
 
       editCard(updateCard);
     }
@@ -42,7 +54,14 @@ const Idea = ({ cancel, card, editCard }) => {
         {edit ? (
           <div>
             <input type="text" value={title} onChange={getTitle} />
-            <input type="text" value={content} onChange={getContent} maxlength="140"/>
+            <input
+              type="text"
+              value={content}
+              onChange={getContent}
+              maxlength="140"
+            />
+            <br />
+            <span className="error">{error}</span>
           </div>
         ) : (
           <div>
