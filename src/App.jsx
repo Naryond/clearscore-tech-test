@@ -1,26 +1,27 @@
-import { useState, useEffect } from "react";
-import "./Style.css";
-import Idea from "./Idea";
-import { v4 as uuidv4 } from "uuid";
+import React from 'react';
+import { useState, useEffect } from 'react';
+import './Style.css';
+import Idea from './Idea';
+import { v4 as uuidv4 } from 'uuid';
 
-let entry = JSON.parse(localStorage.getItem("list")) || [];
+let entry = JSON.parse(localStorage.getItem('list')) || [];
 
 function App() {
   const [list, setList] = useState(entry);
 
   useEffect(() => {
-    let entry = localStorage.getItem("list");
+    let entry = localStorage.getItem('list');
     setList(JSON.parse(entry));
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("list", JSON.stringify(list));
+    localStorage.setItem('list', JSON.stringify(list));
   }, [list]);
 
   const addOne = () => {
     const newCard = {
-      title: "title",
-      content: "content",
+      title: 'title',
+      content: 'content',
       date: new Date().toLocaleString(),
       id: uuidv4(),
     };

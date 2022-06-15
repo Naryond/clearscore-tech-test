@@ -1,12 +1,13 @@
-import { useState } from "react";
-import "./Style.css";
+import React from 'react';
+import { useState } from 'react';
+import './Style.css';
 
 const Idea = ({ cancel, card, editCard }) => {
   const [title, setTitle] = useState(card.title);
   const [content, setContent] = useState(card.content);
   const [time, setTime] = useState(card.date);
   const [edit, setEdit] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
 
   const getTitle = (e) => {
     setTitle(e.target.value);
@@ -19,13 +20,13 @@ const Idea = ({ cancel, card, editCard }) => {
     setError(e.target.value.length);
     let howLong = e.target.value.length;
     if (howLong === 140) {
-      setError("Max length reached");
+      setError('Max length reached');
     }
     if (howLong >= 130 && howLong < 140) {
-      setError("Max length almost reached");
+      setError('Max length almost reached');
     }
     if (howLong < 130) {
-      setError("");
+      setError('');
     }
   };
 
@@ -77,7 +78,7 @@ const Idea = ({ cancel, card, editCard }) => {
         )}
       </div>
       <button className="button" onClick={editMode}>
-        {edit ? "Save" : "Edit"}
+        {edit ? 'Save' : 'Edit'}
       </button>
       <button className="button bottom" onClick={erase}>
         Remove
