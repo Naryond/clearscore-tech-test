@@ -58,7 +58,7 @@ const Idea = ({ cancel, card, editCard }) => {
               type="text"
               value={content}
               onChange={getContent}
-              maxlength="140"
+              maxLength="140"
             />
             <br />
             <span className="error">{error}</span>
