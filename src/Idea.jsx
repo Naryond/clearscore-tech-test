@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import './Style.css';
+import PropTypes from 'prop-types';
 
 const Idea = ({ cancel, card, editCard }) => {
   const [title, setTitle] = useState(card.title);
@@ -48,6 +49,13 @@ const Idea = ({ cancel, card, editCard }) => {
   const erase = () => {
     cancel(card);
   };
+  
+Idea.propTypes = {
+  card: PropTypes.object,
+  cancel: PropTypes.func,
+  editCard: PropTypes.func,
+};
+
 
   return (
     <div>
